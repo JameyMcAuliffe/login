@@ -1,0 +1,21 @@
+{
+  "name": "login",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Jamey McAuliffe <jpmcauliffe15@hotmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/JameyMcAuliffe/login",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
