@@ -4,6 +4,7 @@ html
 		title= title
 	body
 		h1 Register
+		h2(if(error)) #{error}
 		.register-form
 			form(method='POST')
 				.form-group
