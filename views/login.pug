@@ -4,6 +4,8 @@ html
 		title= title
 	body
 		h1 Login
+		if msg
+			h2= msg
 		.login-form
 			form(method='POST')
 				.form-group
@@ -23,6 +25,6 @@ html
 						required
 					)
 				.contact-form__submit
-					a.btn.btn-danger.btn-lg(href='/') Cancel
-					input.btn.btn-success.btn-lg(type='submit' value='Login')
+					a(href='/') Cancel
+					input.btn(type='submit' value='Login')
 

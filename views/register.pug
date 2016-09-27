@@ -4,7 +4,8 @@ html
 		title= title
 	body
 		h1 Register
-		h2(if(error)) #{error}
+		if msg
+			h2= msg
 		.register-form
 			form(method='POST')
 				.form-group
@@ -23,6 +24,6 @@ html
 						placeholder='***************'
 						required
 					)
-				.contact-form__submit
-					a.btn.btn-danger.btn-lg(href='/') Cancel
-					input.btn.btn-success.btn-lg(type='submit' value='Register')
+				.register-form__submit
+					a(href='/') Cancel
+					input.btn(type='submit' value='Register')
