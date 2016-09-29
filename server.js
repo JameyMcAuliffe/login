@@ -13,7 +13,7 @@ const RedisStore = require('connect-redis')(session)
 const bodyParser = require('body-parser')
 
 const routes = require('./routes/')
-//const { connect } = require('./db/database')
+const { connect } = require('./db/database')
 
 const app = express()
 
@@ -41,8 +41,15 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(routes)
 
 //Listens to Port for changes
+connect()
+  .then(() => {
+    app.listen(port, () =>
+      console.log(`Listening on port: ${port}`)
+    )
+  })
+  .catch(console.error)
 
-app.listen(port, () => {
-	console.log(`Express server listening on port ${port}`)
-})
+// app.listen(port, () => {
+// 	console.log(`Express server listening on port ${port}`)
+// })
 
