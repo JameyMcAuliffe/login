@@ -33,7 +33,7 @@ router.get('/register', (req, res) => {
 	res.render('register')
 })
 
-router.post('/register', ({ body: { email, passwword, confirmation } }, res, err) =>{
+router.post('/register', ({ body: { email, password, confirmation } }, res, err) =>{
 	User.findOne({ email })
 		.then(user => {
 			if(user) {
