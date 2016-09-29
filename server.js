@@ -1,5 +1,12 @@
 'use strict'
 
+// Route 1: “/” h1 welcome <a@b.com>
+// Route 2: input email - input pw - submit 
+// Route 3: “/register”  input email - input pw - submit 
+// Route 4: /logout
+// Deployed
+
+
 const express = require('express')
 const session = require('express-session')
 const RedisStore = require('connect-redis')(session)
