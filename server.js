@@ -25,14 +25,14 @@ app.set('view engine', 'pug')
 
 //middlewares
 app.use(session({
-	store: new RedisStore({
-		url: process.env.REDIS_URL || 'redis://localhost:6379'
-	}),
-	//fixes deprecation warnings
-	resave: false,
-	saveUninitialized: false,
-	secret: process.env.SESSION_SECRET || 'loginsecretkey'
+	store: new RedisStore(),
+	secret: 'loginsecretkey'
 }))
+
+app.use((req, res,next) => {
+	app.locals.email = req.session.email
+	next()
+})
 
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: false }))
