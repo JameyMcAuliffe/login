@@ -4,7 +4,10 @@ html
 		title= title
 		link(rel='stylesheet' href='')
 	body
-		h2 Login or Register or something
+		if email
+			h2 Welcome back #{email}
+		else
+			h2 Login or Register or Something
 		ul
 			li: a(href='/login') Login
 			li: a(href='/register') Register
