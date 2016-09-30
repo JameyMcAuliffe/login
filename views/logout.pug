@@ -4,4 +4,9 @@ html
 		title= title
 	body
 		h1 Are you sure you want to logout?
+		.logout-form
+			form(method='POST')
+				.logout-form__submit
+					a.btn(href='/') Cancel
+					input.btn(type='submit' value='Logout')
 		
